@@ -170,16 +170,6 @@ main_frame.pack(padx=20, pady=20, fill="both", expand=True)
 header_frame = ctk.CTkFrame(main_frame, fg_color="transparent")
 header_frame.pack(fill="x", pady=10)
 
-# Try to load a Cloudflare logo for the header (you'd need to add this file)
-try:
-    logo_path = os.path.join(os.path.dirname(__file__), "warpwraplogo.png")
-    if os.path.exists(logo_path):
-        logo_img = ctk.CTkImage(Image.open(logo_path), size=(40, 40))
-        logo_label = ctk.CTkLabel(header_frame, image=logo_img, text="")
-        logo_label.pack(side="left", padx=5)
-except Exception:
-    pass  # If logo loading fails, skip it
-
 header_label = ctk.CTkLabel(header_frame, text="Cloudflare WARP Manager", font=ctk.CTkFont(size=22, weight="bold"))
 header_label.pack(side="left", padx=10)
 
